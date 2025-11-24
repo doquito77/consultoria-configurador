@@ -47,13 +47,13 @@
       border-radius: 12px;
       padding: 16px;
       border: 1px solid #2b2b33;
-      text-align: left; /* força alinhamento geral à esquerda */
+      text-align: left;
     }
 
     .card-header {
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* título e badge alinhados à esquerda */
+      align-items: flex-start; /* tudo colado na mesma coluna */
       gap: 2px;
       margin-bottom: 8px;
     }
@@ -166,11 +166,12 @@
 
     .badge {
       display: inline-block;
-      padding: 2px 8px;
+      padding: 2px 0;            /* SEM padding lateral */
       border-radius: 999px;
       font-size: 11px;
       border: 1px solid #3a3a44;
       color: #c4c4cc;
+      width: auto;
     }
 
     .services-list {
