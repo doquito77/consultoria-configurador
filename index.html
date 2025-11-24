@@ -173,126 +173,64 @@
     }
   </style>
 </head>
+
 <body>
   <div class="wrapper" id="configurador">
     <h1>Monte sua Consultoria</h1>
     <p class="desc">
-      Selecione os serviços, a duração e a frequência de acompanhamento.
-      O valor é calculado automaticamente com base nas suas escolhas.
+      Selecione os serviços, a duração e a frequência.
     </p>
 
-    <!-- Serviços -->
     <div class="grid">
       <div class="card">
-        <h2>Serviços incluídos <span class="badge">passo 1</span></h2>
-        <p>Escolha o que vai fazer parte do acompanhamento.</p>
+        <h2>Serviços <span class="badge">passo 1</span></h2>
+        <p>Escolha o que entra.</p>
 
         <div class="options">
-          <label>
-            <input type="checkbox" name="service" value="treino" checked />
-            Treino personalizado
-          </label>
-          <label>
-            <input type="checkbox" name="service" value="dieta" checked />
-            Dieta individualizada
-          </label>
-          <label>
-            <input type="checkbox" name="service" value="suporte_comportamental" />
-            Suporte comportamental
-          </label>
-          <label>
-            <input type="checkbox" name="service" value="psicologo" />
-            Psicólogo integrado
-          </label>
-          <label>
-            <input type="checkbox" name="service" value="medico" />
-            Acompanhamento médico
-          </label>
-        </div>
-
-        <p class="hint">
-          Você pode ajustar os serviços conforme a necessidade do paciente.
-        </p>
-      </div>
-
-      <!-- Duração -->
-      <div class="card">
-        <h2>Duração do acompanhamento <span class="badge">passo 2</span></h2>
-        <p>Define o tempo mínimo de contrato.</p>
-
-        <div class="options">
-          <label>
-            <input type="radio" name="duration" value="3" checked />
-            3 meses
-          </label>
-          <label>
-            <input type="radio" name="duration" value="6" />
-            6 meses (desconto progressivo)
-          </label>
-          <label>
-            <input type="radio" name="duration" value="12" />
-            12 meses (melhor custo mensal)
-          </label>
+          <label><input type="checkbox" name="service" value="treino" checked /> Treino personalizado</label>
+          <label><input type="checkbox" name="service" value="dieta" checked /> Dieta individualizada</label>
+          <label><input type="checkbox" name="service" value="suporte_comportamental" /> Suporte comportamental</label>
+          <label><input type="checkbox" name="service" value="psicologo" /> Psicólogo integrado</label>
+          <label><input type="checkbox" name="service" value="medico" /> Acompanhamento médico</label>
         </div>
       </div>
 
-      <!-- Frequência -->
       <div class="card">
-        <h2>Frequência de acompanhamento <span class="badge">passo 3</span></h2>
-        <p>Quantidade média de contatos/ajustes.</p>
+        <h2>Duração <span class="badge">passo 2</span></h2>
+        <p>Tempo de contrato.</p>
 
         <div class="options">
-          <label>
-            <input type="radio" name="frequency" value="quinzenal" checked />
-            Quinzenal
-          </label>
-          <label>
-            <input type="radio" name="frequency" value="semanal" />
-            Semanal (mais intenso)
-          </label>
+          <label><input type="radio" name="duration" value="3" checked /> 3 meses</label>
+          <label><input type="radio" name="duration" value="6" /> 6 meses</label>
+          <label><input type="radio" name="duration" value="12" /> 12 meses</label>
         </div>
-        <p class="hint">
-          Frequência maior aumenta o valor mensal (mais horas de trabalho).
-        </p>
+      </div>
+
+      <div class="card">
+        <h2>Frequência <span class="badge">passo 3</span></h2>
+        <p>Número de contatos.</p>
+
+        <div class="options">
+          <label><input type="radio" name="frequency" value="quinzenal" checked /> Quinzenal</label>
+          <label><input type="radio" name="frequency" value="semanal" /> Semanal</label>
+        </div>
       </div>
     </div>
 
-    <!-- Resumo e valor -->
     <div class="summary" id="summary">
-      <h2>Resumo do plano</h2>
-      <div class="summary-row">
-        <span class="label">Serviços selecionados:</span>
-        <span id="summary-services-count">0</span>
-      </div>
+      <h2>Resumo</h2>
+      <div class="summary-row"><span class="label">Serviços:</span> <span id="summary-services-count">0</span></div>
       <div class="services-list" id="summary-services-list"></div>
 
-      <div class="summary-row">
-        <span class="label">Duração:</span>
-        <span id="summary-duration"></span>
-      </div>
+      <div class="summary-row"><span class="label">Duração:</span> <span id="summary-duration"></span></div>
+      <div class="summary-row"><span class="label">Frequência:</span> <span id="summary-frequency"></span></div>
 
-      <div class="summary-row">
-        <span class="label">Frequência:</span>
-        <span id="summary-frequency"></span>
-      </div>
-
-      <div class="summary-row">
-        <span class="label">Valor mensal base:</span>
-        <span id="summary-monthly-base">R$ 0,00</span>
-      </div>
-
-      <div class="summary-row">
-        <span class="label">Ajuste por frequência:</span>
-        <span id="summary-frequency-factor">x 1,00</span>
-      </div>
-
-      <div class="summary-row">
-        <span class="label">Fator de desconto pela duração:</span>
-        <span id="summary-duration-factor">x 1,00</span>
-      </div>
+      <div class="summary-row"><span class="label">Base mensal:</span> <span id="summary-monthly-base">R$ 0,00</span></div>
+      <div class="summary-row"><span class="label">Fator frequência:</span> <span id="summary-frequency-factor">x 1,00</span></div>
+      <div class="summary-row"><span class="label">Fator duração:</span> <span id="summary-duration-factor">x 1,00</span></div>
 
       <div class="price-total">
-        <span class="label">Valor total do plano:</span>
+        <span class="label">Total:</span>
         <div>
           <span class="value" id="summary-total">R$ 0,00</span>
           <div class="per-month" id="summary-total-per-month"></div>
@@ -301,131 +239,75 @@
     </div>
   </div>
 
-  <script>
-    // CONFIGURAÇÃO DE PREÇOS – TROCAR PELOS TEUS VALORES REAIS
-    const services = {
-      treino: {
-        name: "Treino personalizado",
-        monthlyPrice: 200
-      },
-      dieta: {
-        name: "Dieta individualizada",
-        monthlyPrice: 250
-      },
-      suporte_comportamental: {
-        name: "Suporte comportamental",
-        monthlyPrice: 300
-      },
-      psicologo: {
-        name: "Psicólogo integrado",
-        monthlyPrice: 400
-      },
-      medico: {
-        name: "Acompanhamento médico",
-        monthlyPrice: 350
-      }
-    };
+<script>
+const services = {
+  treino: { name: "Treino personalizado", monthlyPrice: 200 },
+  dieta: { name: "Dieta individualizada", monthlyPrice: 250 },
+  suporte_comportamental: { name: "Suporte comportamental", monthlyPrice: 300 },
+  psicologo: { name: "Psicólogo integrado", monthlyPrice: 400 },
+  medico: { name: "Acompanhamento médico", monthlyPrice: 350 }
+};
 
-    const config = {
-      frequencyFactors: {
-        quinzenal: 1.0,
-        semanal: 1.4
-      },
-      durationDiscounts: {
-        3: 1.0,   // sem desconto
-        6: 0.95,  // 5% desconto
-        12: 0.90  // 10% desconto
-      }
-    };
+const config = {
+  frequencyFactors: { quinzenal: 1.0, semanal: 1.4 },
+  durationDiscounts: { 3: 1.0, 6: 0.95, 12: 0.90 }
+};
 
-    function formatCurrency(value) {
-      return value.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-      });
-    }
+function formatCurrency(value) {
+  return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+}
 
-    function updateSummary() {
-      const serviceCheckboxes = document.querySelectorAll('input[name="service"]:checked');
-      const durationRadio = document.querySelector('input[name="duration"]:checked');
-      const frequencyRadio = document.querySelector('input[name="frequency"]:checked');
+function updateSummary() {
+  const serviceCheckboxes = document.querySelectorAll('input[name="service"]:checked');
+  const durationRadio = document.querySelector('input[name="duration"]:checked');
+  const frequencyRadio = document.querySelector('input[name="frequency"]:checked');
 
-      // Serviços selecionados
-      let selectedServices = [];
-      let monthlyBase = 0;
+  let selectedServices = [];
+  let monthlyBase = 0;
 
-      serviceCheckboxes.forEach(cb => {
-        const s = services[cb.value];
-        if (s) {
-          selectedServices.push(s);
-          monthlyBase += s.monthlyPrice;
-        }
-      });
+  serviceCheckboxes.forEach(cb => {
+    const s = services[cb.value];
+    selectedServices.push(s);
+    monthlyBase += s.monthlyPrice;
+  });
 
-      const duration = durationRadio ? parseInt(durationRadio.value, 10) : 0;
-      const frequency = frequencyRadio ? frequencyRadio.value : "quinzenal";
+  const duration = parseInt(durationRadio.value, 10);
+  const frequency = frequencyRadio.value;
 
-      const frequencyFactor = config.frequencyFactors[frequency] ?? 1.0;
-      const durationFactor = config.durationDiscounts[duration] ?? 1.0;
+  const frequencyFactor = config.frequencyFactors[frequency];
+  const durationFactor = config.durationDiscounts[duration];
 
-      const monthlyAdjusted = monthlyBase * frequencyFactor;
-      const total = monthlyAdjusted * duration * durationFactor;
+  const monthlyAdjusted = monthlyBase * frequencyFactor;
+  const total = monthlyAdjusted * duration * durationFactor;
 
-      // Atualiza texto do resumo
-      document.getElementById("summary-services-count").textContent = selectedServices.length;
+  document.getElementById("summary-services-count").textContent = selectedServices.length;
 
-      const listContainer = document.getElementById("summary-services-list");
-      listContainer.innerHTML = "";
-      if (selectedServices.length > 0) {
-        selectedServices.forEach(s => {
-          const span = document.createElement("span");
-          span.textContent = `${s.name} (${formatCurrency(s.monthlyPrice)}/mês)`;
-          listContainer.appendChild(span);
-        });
-      } else {
-        listContainer.textContent = "Nenhum serviço selecionado.";
-      }
+  const list = document.getElementById("summary-services-list");
+  list.innerHTML = "";
+  selectedServices.forEach(s => {
+    const span = document.createElement("span");
+    span.textContent = `${s.name} (${formatCurrency(s.monthlyPrice)}/mês)`;
+    list.appendChild(span);
+  });
 
-      document.getElementById("summary-duration").textContent =
-        duration ? `${duration} meses` : "-";
+  document.getElementById("summary-duration").textContent = `${duration} meses`;
+  document.getElementById("summary-frequency").textContent = (frequency === "semanal") ? "Semanal" : "Quinzenal";
 
-      document.getElementById("summary-frequency").textContent =
-        frequency === "semanal" ? "Semanal" : "Quinzenal";
+  document.getElementById("summary-monthly-base").textContent = formatCurrency(monthlyBase);
+  document.getElementById("summary-frequency-factor").textContent = `x ${frequencyFactor.toFixed(2)}`;
+  document.getElementById("summary-duration-factor").textContent = `x ${durationFactor.toFixed(2)}`;
+  document.getElementById("summary-total").textContent = formatCurrency(total);
 
-      document.getElementById("summary-monthly-base").textContent =
-        formatCurrency(monthlyBase);
+  const perMonth = total / duration;
+  document.getElementById("summary-total-per-month").textContent = `equivalente a ${formatCurrency(perMonth)} por mês`;
+}
 
-      document.getElementById("summary-frequency-factor").textContent =
-        `x ${frequencyFactor.toFixed(2)}`;
+document.querySelectorAll('input[name="service"]').forEach(el => el.addEventListener("change", updateSummary));
+document.querySelectorAll('input[name="duration"]').forEach(el => el.addEventListener("change", updateSummary));
+document.querySelectorAll('input[name="frequency"]').forEach(el => el.addEventListener("change", updateSummary));
 
-      document.getElementById("summary-duration-factor").textContent =
-        `x ${durationFactor.toFixed(2)}`;
+updateSummary();
+</script>
 
-      document.getElementById("summary-total").textContent =
-        formatCurrency(total);
-
-      const perMonth = duration > 0 ? total / duration : 0;
-      document.getElementById("summary-total-per-month").textContent =
-        duration > 0
-          ? `equivalente a ${formatCurrency(perMonth)} por mês`
-          : "";
-    }
-
-    // Listeners
-    document.querySelectorAll('input[name="service"]').forEach(el => {
-      el.addEventListener("change", updateSummary);
-    });
-
-    document.querySelectorAll('input[name="duration"]').forEach(el => {
-      el.addEventListener("change", updateSummary);
-    });
-
-    document.querySelectorAll('input[name="frequency"]').forEach(el => {
-      el.addEventListener("change", updateSummary);
-    });
-
-    // Inicializa resumo
-    updateSummary();
-  </script>
 </body>
 </html>
