@@ -11,40 +11,198 @@
       margin: 0;
       padding: 0;
     }
-    .wrapper { max-width: 900px; margin: 40px auto; padding: 24px; background: #151518; border-radius: 16px; box-shadow: 0 0 30px rgba(0,0,0,0.7); border: 1px solid #26262b; }
-    h1 { margin-top: 0; font-size: 24px; margin-bottom: 16px; }
-    p.desc { margin-top: 0; margin-bottom: 24px; color: #b0b0b8; font-size: 14px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
-    .card { background: #1b1b20; border-radius: 12px; padding: 16px; border: 1px solid #2b2b33; }
-    .card h2 { font-size: 16px; margin: 0 0 8px; }
-    .card p { margin: 0; font-size: 13px; color: #a5a5af; }
-    label { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
-    input[type="checkbox"], input[type="radio"] { accent-color: #e74c3c; width: 16px; height: 16px; cursor: pointer; }
-    .options { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
-    .summary { margin-top: 24px; padding: 16px; background: #111116; border-radius: 12px; border: 1px solid #33333d; }
-    .summary h2 { margin-top: 0; font-size: 18px; margin-bottom: 12px; }
-    .summary-row { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 4px; color: #c0c0c8; }
-    .summary-row span.label { color: #8e8e97; }
-    .price-total { margin-top: 12px; padding-top: 12px; border-top: 1px solid #34343d; display: flex; justify-content: space-between; align-items: baseline; }
-    .price-total span.label { font-size: 15px; color: #b4b4bd; }
-    .price-total span.value { font-size: 22px; font-weight: 600; color: #ff4d4d; }
-    .per-month { font-size: 12px; color: #8a8a92; }
-    .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; border: 1px solid #3a3a44; color: #c4c4cc; margin-left: 6px; }
-    .services-list { font-size: 13px; color: #c8c8d2; margin-top: 8px; }
-    .services-list span { display: inline-block; background: #202028; padding: 4px 8px; border-radius: 999px; margin: 2px 4px 2px 0; font-size: 12px; }
-    .hint { font-size: 11px; color: #7c7c86; margin-top: 4px; }
-    @media (max-width: 600px) { .wrapper { margin: 16px; padding: 16px; } }
+
+    .wrapper {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #151518;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.7);
+      border: 1px solid #26262b;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    p.desc {
+      margin-top: 0;
+      margin-bottom: 24px;
+      color: #b0b0b8;
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: #1b1b20;
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid #2b2b33;
+    }
+
+    .card h2 {
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 13px;
+      color: #a5a5af;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      accent-color: #e74c3c;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .summary {
+      margin-top: 24px;
+      padding: 16px;
+      background: #111116;
+      border-radius: 12px;
+      border: 1px solid #33333d;
+    }
+
+    .summary h2 {
+      margin-top: 0;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: #c0c0c8;
+    }
+
+    .summary-row span.label {
+      color: #8e8e97;
+    }
+
+    .price-total {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #34343d;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .price-total span.label {
+      font-size: 15px;
+      color: #b4b4bd;
+    }
+
+    .price-total span.value {
+      font-size: 22px;
+      font-weight: 600;
+      color: #ff4d4d;
+    }
+
+    .per-month {
+      font-size: 12px;
+      color: #8a8a92;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid #3a3a44;
+      color: #c4c4cc;
+      margin-left: 6px;
+    }
+
+    .services-list {
+      font-size: 13px;
+      color: #c8c8d2;
+      margin-top: 8px;
+    }
+
+    .services-list span {
+      display: inline-block;
+      background: #202028;
+      padding: 4px 8px;
+      border-radius: 999px;
+      margin: 2px 4px 2px 0;
+      font-size: 12px;
+    }
+
+    .hint {
+      font-size: 11px;
+      color: #7c7c86;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper {
+        margin: 16px;
+        padding: 16px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="wrapper" id="configurador">
     <h1>Monte sua Consultoria</h1>
-    <p class="desc">Selecione os serviços, a duração e a frequência.</p>
+    <p class="desc">
+      Selecione os serviços, a duração, a frequência dos feedbacks e o tipo de plano.
+    </p>
 
     <div class="grid">
+      <!-- Tipo de plano -->
       <div class="card">
-        <h2>Serviços <span class="badge">passo 1</span></h2>
-        <p>Escolha o que entra.</p>
+        <h2>Tipo de plano <span class="badge">passo 0</span></h2>
+        <p>Escolha se o plano será individual ou para duas pessoas.</p>
+        <div class="options">
+          <label>
+            <input type="radio" name="planType" value="individual" checked />
+            Individual
+          </label>
+          <label>
+            <input type="radio" name="planType" value="casal" />
+            Casal (amigos ou parceiros(as))
+          </label>
+        </div>
+      </div>
+
+      <!-- Serviços -->
+      <div class="card">
+        <h2>Serviços incluídos <span class="badge">passo 1</span></h2>
+        <p>Escolha o que vai fazer parte do acompanhamento.</p>
+
         <div class="options">
           <label><input type="checkbox" name="service" value="treino" checked /> Treino personalizado</label>
           <label><input type="checkbox" name="service" value="dieta" checked /> Dieta individualizada</label>
@@ -54,37 +212,78 @@
         </div>
       </div>
 
+      <!-- Duração -->
       <div class="card">
-        <h2>Duração <span class="badge">passo 2</span></h2>
-        <p>Tempo de contrato.</p>
+        <h2>Duração do acompanhamento <span class="badge">passo 2</span></h2>
+        <p>Define o tempo mínimo de contrato.</p>
+
         <div class="options">
-          <label><input type="radio" name="duration" value="3" checked /> 3 meses</label>
-          <label><input type="radio" name="duration" value="6" /> 6 meses</label>
-          <label><input type="radio" name="duration" value="12" /> 12 meses</label>
+          <label><input type="radio" name="duration" value="3" checked /> 3 meses (≈ 90 dias)</label>
+          <label><input type="radio" name="duration" value="6" /> 6 meses (≈ 180 dias)</label>
+          <label><input type="radio" name="duration" value="12" /> 12 meses (≈ 365 dias)</label>
         </div>
       </div>
 
+      <!-- Frequência dos feedbacks -->
       <div class="card">
-        <h2>Frequência <span class="badge">passo 3</span></h2>
-        <p>Número de contatos.</p>
+        <h2>Frequência dos feedbacks <span class="badge">passo 3</span></h2>
+        <p>Frequência que vamos analisar seu progresso.</p>
+        <p class="hint">(frequência que vamos analisar seu progresso)</p>
+
         <div class="options">
           <label><input type="radio" name="frequency" value="quinzenal" checked /> Quinzenal</label>
           <label><input type="radio" name="frequency" value="semanal" /> Semanal</label>
+          <label><input type="radio" name="frequency" value="trimestral" /> Trimestral</label>
         </div>
       </div>
     </div>
 
     <div class="summary" id="summary">
-      <h2>Resumo</h2>
-      <div class="summary-row"><span class="label">Serviços:</span> <span id="summary-services-count">0</span></div>
+      <h2>Resumo do plano</h2>
+
+      <div class="summary-row">
+        <span class="label">Tipo de plano:</span>
+        <span id="summary-plan-type"></span>
+      </div>
+
+      <div class="summary-row">
+        <span class="label">Serviços selecionados:</span>
+        <span id="summary-services-count">0</span>
+      </div>
       <div class="services-list" id="summary-services-list"></div>
-      <div class="summary-row"><span class="label">Duração:</span> <span id="summary-duration"></span></div>
-      <div class="summary-row"><span class="label">Frequência:</span> <span id="summary-frequency"></span></div>
-      <div class="summary-row"><span class="label">Base mensal:</span> <span id="summary-monthly-base">R$ 0,00</span></div>
-      <div class="summary-row"><span class="label">Fator frequência:</span> <span id="summary-frequency-factor">x 1,00</span></div>
-      <div class="summary-row"><span class="label">Fator duração:</span> <span id="summary-duration-factor">x 1,00</span></div>
+
+      <div class="summary-row">
+        <span class="label">Duração:</span>
+        <span id="summary-duration"></span>
+      </div>
+
+      <div class="summary-row">
+        <span class="label">Frequência dos feedbacks:</span>
+        <span id="summary-frequency"></span>
+      </div>
+
+      <div class="summary-row">
+        <span class="label">Valor mensal base:</span>
+        <span id="summary-monthly-base">R$ 0,00</span>
+      </div>
+
+      <div class="summary-row">
+        <span class="label">Ajuste por frequência:</span>
+        <span id="summary-frequency-factor">x 1,00</span>
+      </div>
+
+      <div class="summary-row">
+        <span class="label">Fator de desconto pela duração:</span>
+        <span id="summary-duration-factor">x 1,00</span>
+      </div>
+
+      <div class="summary-row">
+        <span class="label">Fator tipo de plano:</span>
+        <span id="summary-plan-factor">x 1,00</span>
+      </div>
+
       <div class="price-total">
-        <span class="label">Total:</span>
+        <span class="label">Valor total do plano:</span>
         <div>
           <span class="value" id="summary-total">R$ 0,00</span>
           <div class="per-month" id="summary-total-per-month"></div>
@@ -94,6 +293,7 @@
   </div>
 
   <script>
+    // PREÇOS DOS SERVIÇOS (ajusta aqui)
     const services = {
       treino: { name: "Treino personalizado", monthlyPrice: 200 },
       dieta: { name: "Dieta individualizada", monthlyPrice: 250 },
@@ -103,62 +303,118 @@
     };
 
     const config = {
-      frequencyFactors: { quinzenal: 1.0, semanal: 1.4 },
-      durationDiscounts: { 3: 1.0, 6: 0.95, 12: 0.90 }
+      frequencyFactors: {
+        quinzenal: 1.0,
+        semanal: 1.4,
+        trimestral: 0.7
+      },
+      durationDiscounts: {
+        3: 1.0,
+        6: 0.95,
+        12: 0.90
+      },
+      planFactors: {
+        individual: 1.0,
+        casal: 1.2 // 2 pessoas com 40% de desconto no total conjunto
+      }
     };
 
     function formatCurrency(value) {
-      return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+      return value.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
     }
 
     function updateSummary() {
       const serviceCheckboxes = document.querySelectorAll('input[name="service"]:checked');
       const durationRadio = document.querySelector('input[name="duration"]:checked');
       const frequencyRadio = document.querySelector('input[name="frequency"]:checked');
+      const planRadio = document.querySelector('input[name="planType"]:checked');
 
+      // Serviços
       let selectedServices = [];
       let monthlyBase = 0;
-
       serviceCheckboxes.forEach(cb => {
         const s = services[cb.value];
-        selectedServices.push(s);
-        monthlyBase += s.monthlyPrice;
+        if (s) {
+          selectedServices.push(s);
+          monthlyBase += s.monthlyPrice;
+        }
       });
 
-      const duration = parseInt(durationRadio.value, 10);
-      const frequency = frequencyRadio.value;
+      const duration = durationRadio ? parseInt(durationRadio.value, 10) : 0;
+      const frequency = frequencyRadio ? frequencyRadio.value : "quinzenal";
+      const planType = planRadio ? planRadio.value : "individual";
 
-      const frequencyFactor = config.frequencyFactors[frequency];
-      const durationFactor = config.durationDiscounts[duration];
+      const frequencyFactor = config.frequencyFactors[frequency] ?? 1.0;
+      const durationFactor = config.durationDiscounts[duration] ?? 1.0;
+      const planFactor = config.planFactors[planType] ?? 1.0;
 
       const monthlyAdjusted = monthlyBase * frequencyFactor;
-      const total = monthlyAdjusted * duration * durationFactor;
+      const total = monthlyAdjusted * duration * durationFactor * planFactor;
+
+      // Resumo
+      document.getElementById("summary-plan-type").textContent =
+        planType === "casal" ? "Casal (amigos ou parceiros(as))" : "Individual";
 
       document.getElementById("summary-services-count").textContent = selectedServices.length;
 
-      const list = document.getElementById("summary-services-list");
-      list.innerHTML = "";
-      selectedServices.forEach(s => {
-        const span = document.createElement("span");
-        span.textContent = `${s.name} (${formatCurrency(s.monthlyPrice)}/mês)`;
-        list.appendChild(span);
-      });
+      const listContainer = document.getElementById("summary-services-list");
+      listContainer.innerHTML = "";
+      if (selectedServices.length > 0) {
+        selectedServices.forEach(s => {
+          const span = document.createElement("span");
+          span.textContent = `${s.name} (${formatCurrency(s.monthlyPrice)}/mês)`;
+          listContainer.appendChild(span);
+        });
+      } else {
+        listContainer.textContent = "Nenhum serviço selecionado.";
+      }
 
-      document.getElementById("summary-duration").textContent = `${duration} meses`;
-      document.getElementById("summary-frequency").textContent = (frequency === "semanal") ? "Semanal" : "Quinzenal";
+      document.getElementById("summary-duration").textContent =
+        duration ? `${duration} meses` : "-";
 
-      document.getElementById("summary-monthly-base").textContent = formatCurrency(monthlyBase);
-      document.getElementById("summary-frequency-factor").textContent = `x ${frequencyFactor.toFixed(2)}`;
-      document.getElementById("summary-duration-factor").textContent = `x ${durationFactor.toFixed(2)}`;
-      document.getElementById("summary-total").textContent = formatCurrency(total);
+      let frequencyLabel = "Quinzenal";
+      if (frequency === "semanal") frequencyLabel = "Semanal";
+      if (frequency === "trimestral") frequencyLabel = "Trimestral";
+      document.getElementById("summary-frequency").textContent = frequencyLabel;
 
-      const perMonth = total / duration;
-      document.getElementById("summary-total-per-month").textContent = `equivalente a ${formatCurrency(perMonth)} por mês`;
+      document.getElementById("summary-monthly-base").textContent =
+        formatCurrency(monthlyBase);
+
+      document.getElementById("summary-frequency-factor").textContent =
+        `x ${frequencyFactor.toFixed(2)}`;
+
+      document.getElementById("summary-duration-factor").textContent =
+        `x ${durationFactor.toFixed(2)}`;
+
+      document.getElementById("summary-plan-factor").textContent =
+        `x ${planFactor.toFixed(2)}`;
+
+      document.getElementById("summary-total").textContent =
+        formatCurrency(total);
+
+      const perMonth = duration > 0 ? total / duration : 0;
+      document.getElementById("summary-total-per-month").textContent =
+        duration > 0
+          ? `equivalente a ${formatCurrency(perMonth)} por mês`
+          : "";
     }
 
-    document.querySelectorAll('input[name="service"]').forEach(el => el.addEventListener("change", updateSummary));
-    document.querySelectorAll('input[name="duration"]').forEach(el => el.addEventListener("change", updateSummary));
-    document.querySelectorAll('input[name="frequency"]').forEach(el => el.addEventListener("change", updateSummary));
+    // Listeners
+    document.querySelectorAll('input[name="service"]').forEach(el =>
+      el.addEventListener("change", updateSummary)
+    );
+    document.querySelectorAll('input[name="duration"]').forEach(el =>
+      el.addEventListener("change", updateSummary)
+    );
+    document.querySelectorAll('input[name="frequency"]').forEach(el =>
+      el.addEventListener("change", updateSummary)
+    );
+    document.querySelectorAll('input[name="planType"]').forEach(el =>
+      el.addEventListener("change", updateSummary)
+    );
 
     updateSummary();
   </script>
