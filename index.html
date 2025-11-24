@@ -50,9 +50,10 @@
       text-align: left;
     }
 
-    /* CABEÇALHO DO CARD: TÍTULO + PASSO */
+    /* CABEÇALHO: título e passo alinhados na MESMA COLUNA */
     .card-header {
       margin-bottom: 8px;
+      text-align: left !important;  /* força alinhamento da linha */
     }
 
     .card-title {
@@ -62,15 +63,14 @@
     }
 
     .card-step {
-      display: inline-flex;           /* pílula, mas alinhada à esquerda */
-      align-items: center;
-      justify-content: flex-start;
-      padding: 2px 30px;              /* largura confortável */
+      display: inline-block;
+      padding: 2px 10px;
       border-radius: 999px;
       font-size: 11px;
       border: 1px solid #3a3a44;
       color: #c4c4cc;
       background: #1f1f25;
+      margin: 0;                    /* NENHUM auto, nada centralizando */
     }
 
     .card p {
@@ -364,7 +364,7 @@
       },
       planFactors: {
         individual: 1.0,
-        dupla: 1.2 // 2 pessoas com 40% de desconto no total conjunto
+        dupla: 1.2
       }
     };
 
