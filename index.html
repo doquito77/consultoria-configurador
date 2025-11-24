@@ -53,8 +53,8 @@
     .card-header {
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* tudo colado na mesma coluna */
-      gap: 2px;
+      align-items: flex-start;
+      gap: 4px;
       margin-bottom: 8px;
     }
 
@@ -67,7 +67,6 @@
 
     .card-header .badge {
       margin-left: 0;
-      text-align: left;
     }
 
     .card p {
@@ -164,20 +163,16 @@
       color: #8a8a92;
     }
 
-   .badge {
-  display: inline-block;
-  padding: 2px 8px;    /* <<< agora tem espaço lateral real */
-  border-radius: 999px;
-  font-size: 11px;
-  border: 1px solid #3a3a44;
-  color: #c4c4cc;
-  background: #1f1f25; /* deixa mais sólido sem exagerar */
-  width: auto;         /* mantém ajuste natural */
-  text-align: left;
-  padding: 3px 10px;
-  font-size: 10.5px;
-}
-
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;      /* OPÇÃO B: mais largura lateral */
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid #3a3a44;
+      color: #c4c4cc;
+      background: #1f1f25;
+      text-align: left;
+    }
 
     .services-list {
       font-size: 13px;
