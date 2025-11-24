@@ -49,9 +49,17 @@
       border: 1px solid #2b2b33;
     }
 
-    .card h2 {
+    .card-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      margin-bottom: 8px;
+    }
+
+    .card-header h2 {
       font-size: 16px;
-      margin: 0 0 4px;
+      margin: 0;
     }
 
     .card p {
@@ -75,6 +83,7 @@
       height: 16px;
       cursor: pointer;
       margin-top: 2px;
+      flex-shrink: 0;
     }
 
     .options {
@@ -82,6 +91,18 @@
       flex-direction: column;
       gap: 8px;
       margin-top: 8px;
+    }
+
+    .option-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .option-sub {
+      font-size: 11px;
+      font-style: italic;
+      color: #8a8a92;
+      margin-top: 2px;
     }
 
     .summary {
@@ -142,7 +163,6 @@
       font-size: 11px;
       border: 1px solid #3a3a44;
       color: #c4c4cc;
-      margin-top: 4px;
     }
 
     .services-list {
@@ -158,12 +178,6 @@
       border-radius: 999px;
       margin: 2px 4px 2px 0;
       font-size: 12px;
-    }
-
-    .hint {
-      font-size: 11px;
-      color: #7c7c86;
-      margin-top: 4px;
     }
 
     @media (max-width: 600px) {
@@ -185,25 +199,34 @@
     <div class="grid">
       <!-- Tipo de plano -->
       <div class="card">
-        <h2>Tipo de plano</h2>
-        <div class="badge">passo 1</div>
+        <div class="card-header">
+          <h2>Tipo de plano</h2>
+          <div class="badge">passo 1</div>
+        </div>
         <p>Escolha se o plano será individual ou para duas pessoas.</p>
         <div class="options">
           <label>
             <input type="radio" name="planType" value="individual" checked />
-            <span>Individual</span>
+            <div class="option-text">
+              <span>Individual</span>
+            </div>
           </label>
           <label>
             <input type="radio" name="planType" value="dupla" />
-            <span>Dupla (amigos, parceiros(as) ou familiares)</span>
+            <div class="option-text">
+              <span>Dupla</span>
+              <span class="option-sub">amigos, parceiros(as) ou familiares</span>
+            </div>
           </label>
         </div>
       </div>
 
       <!-- Serviços -->
       <div class="card">
-        <h2>Serviços incluídos</h2>
-        <div class="badge">passo 2</div>
+        <div class="card-header">
+          <h2>Serviços incluídos</h2>
+          <div class="badge">passo 2</div>
+        </div>
         <p>Escolha o que vai fazer parte do acompanhamento.</p>
 
         <div class="options">
@@ -217,8 +240,10 @@
 
       <!-- Duração -->
       <div class="card">
-        <h2>Duração do acompanhamento</h2>
-        <div class="badge">passo 3</div>
+        <div class="card-header">
+          <h2>Duração do acompanhamento</h2>
+          <div class="badge">passo 3</div>
+        </div>
         <p>Define o tempo mínimo de contrato.</p>
 
         <div class="options">
@@ -230,22 +255,32 @@
 
       <!-- Frequência dos feedbacks -->
       <div class="card">
-        <h2>Frequência dos feedbacks</h2>
-        <div class="badge">passo 4</div>
+        <div class="card-header">
+          <h2>Frequência dos feedbacks</h2>
+          <div class="badge">passo 4</div>
+        </div>
         <p>Frequência com que vamos revisar seus resultados e ajustes.</p>
 
         <div class="options">
           <label>
             <input type="radio" name="frequency" value="semanal" checked />
-            <span>Semanal (ideal para melhorias de hábitos, comportamento e emagrecimento)</span>
+            <div class="option-text">
+              <span>Semanal</span>
+              <span class="option-sub">ideal para melhorias de hábitos, comportamento e emagrecimento</span>
+            </div>
           </label>
           <label>
             <input type="radio" name="frequency" value="quinzenal" />
-            <span>Quinzenal (ideal para hipertrofia)</span>
+            <div class="option-text">
+              <span>Quinzenal</span>
+              <span class="option-sub">ideal para hipertrofia</span>
+            </div>
           </label>
           <label>
             <input type="radio" name="frequency" value="mensal" />
-            <span>Mensal</span>
+            <div class="option-text">
+              <span>Mensal</span>
+            </div>
           </label>
         </div>
       </div>
@@ -306,7 +341,6 @@
   </div>
 
   <script>
-    // PREÇOS DOS SERVIÇOS (ajusta aqui)
     const services = {
       treino: { name: "Treino personalizado", monthlyPrice: 200 },
       dieta: { name: "Dieta individualizada", monthlyPrice: 250 },
@@ -366,13 +400,11 @@
       const monthlyAdjusted = monthlyBase * frequencyFactor;
       const total = monthlyAdjusted * duration * durationFactor * planFactor;
 
-      // Tipo de plano
       document.getElementById("summary-plan-type").textContent =
         planType === "dupla"
           ? "Dupla (amigos, parceiros(as) ou familiares)"
           : "Individual";
 
-      // Serviços
       document.getElementById("summary-services-count").textContent = selectedServices.length;
 
       const listContainer = document.getElementById("summary-services-list");
@@ -387,17 +419,14 @@
         listContainer.textContent = "Nenhum serviço selecionado.";
       }
 
-      // Duração
       document.getElementById("summary-duration").textContent =
         duration ? `${duration} meses` : "-";
 
-      // Frequência label
       let frequencyLabel = "Semanal";
       if (frequency === "quinzenal") frequencyLabel = "Quinzenal";
       if (frequency === "mensal") frequencyLabel = "Mensal";
       document.getElementById("summary-frequency").textContent = frequencyLabel;
 
-      // Valores
       document.getElementById("summary-monthly-base").textContent =
         formatCurrency(monthlyBase);
 
