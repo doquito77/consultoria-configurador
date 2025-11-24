@@ -47,12 +47,13 @@
       border-radius: 12px;
       padding: 16px;
       border: 1px solid #2b2b33;
+      text-align: left; /* força alinhamento geral à esquerda */
     }
 
     .card-header {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: flex-start; /* título e badge alinhados à esquerda */
       gap: 2px;
       margin-bottom: 8px;
     }
@@ -60,6 +61,13 @@
     .card-header h2 {
       font-size: 16px;
       margin: 0;
+      width: 100%;
+      text-align: left;
+    }
+
+    .card-header .badge {
+      margin-left: 0;
+      text-align: left;
     }
 
     .card p {
