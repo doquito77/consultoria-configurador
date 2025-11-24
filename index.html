@@ -51,7 +51,7 @@
 
     .card h2 {
       font-size: 16px;
-      margin: 0 0 8px;
+      margin: 0 0 4px;
     }
 
     .card p {
@@ -62,7 +62,7 @@
 
     label {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 8px;
       font-size: 14px;
       cursor: pointer;
@@ -74,6 +74,7 @@
       width: 16px;
       height: 16px;
       cursor: pointer;
+      margin-top: 2px;
     }
 
     .options {
@@ -141,7 +142,7 @@
       font-size: 11px;
       border: 1px solid #3a3a44;
       color: #c4c4cc;
-      margin-left: 6px;
+      margin-top: 4px;
     }
 
     .services-list {
@@ -184,56 +185,68 @@
     <div class="grid">
       <!-- Tipo de plano -->
       <div class="card">
-        <h2>Tipo de plano <span class="badge">passo 0</span></h2>
+        <h2>Tipo de plano</h2>
+        <div class="badge">passo 1</div>
         <p>Escolha se o plano será individual ou para duas pessoas.</p>
         <div class="options">
           <label>
             <input type="radio" name="planType" value="individual" checked />
-            Individual
+            <span>Individual</span>
           </label>
           <label>
-            <input type="radio" name="planType" value="casal" />
-            Casal (amigos ou parceiros(as))
+            <input type="radio" name="planType" value="dupla" />
+            <span>Dupla (amigos, parceiros(as) ou familiares)</span>
           </label>
         </div>
       </div>
 
       <!-- Serviços -->
       <div class="card">
-        <h2>Serviços incluídos <span class="badge">passo 1</span></h2>
+        <h2>Serviços incluídos</h2>
+        <div class="badge">passo 2</div>
         <p>Escolha o que vai fazer parte do acompanhamento.</p>
 
         <div class="options">
-          <label><input type="checkbox" name="service" value="treino" checked /> Treino personalizado</label>
-          <label><input type="checkbox" name="service" value="dieta" checked /> Dieta individualizada</label>
-          <label><input type="checkbox" name="service" value="suporte_comportamental" /> Suporte comportamental</label>
-          <label><input type="checkbox" name="service" value="psicologo" /> Psicólogo integrado</label>
-          <label><input type="checkbox" name="service" value="medico" /> Acompanhamento médico</label>
+          <label><input type="checkbox" name="service" value="treino" checked /> <span>Treino personalizado</span></label>
+          <label><input type="checkbox" name="service" value="dieta" checked /> <span>Dieta individualizada</span></label>
+          <label><input type="checkbox" name="service" value="suporte_comportamental" /> <span>Suporte comportamental</span></label>
+          <label><input type="checkbox" name="service" value="psicologo" /> <span>Psicólogo integrado</span></label>
+          <label><input type="checkbox" name="service" value="medico" /> <span>Acompanhamento médico</span></label>
         </div>
       </div>
 
       <!-- Duração -->
       <div class="card">
-        <h2>Duração do acompanhamento <span class="badge">passo 2</span></h2>
+        <h2>Duração do acompanhamento</h2>
+        <div class="badge">passo 3</div>
         <p>Define o tempo mínimo de contrato.</p>
 
         <div class="options">
-          <label><input type="radio" name="duration" value="3" checked /> 3 meses (≈ 90 dias)</label>
-          <label><input type="radio" name="duration" value="6" /> 6 meses (≈ 180 dias)</label>
-          <label><input type="radio" name="duration" value="12" /> 12 meses (≈ 365 dias)</label>
+          <label><input type="radio" name="duration" value="3" checked /> <span>3 meses (≈ 90 dias)</span></label>
+          <label><input type="radio" name="duration" value="6" /> <span>6 meses (≈ 180 dias)</span></label>
+          <label><input type="radio" name="duration" value="12" /> <span>12 meses (≈ 365 dias)</span></label>
         </div>
       </div>
 
       <!-- Frequência dos feedbacks -->
       <div class="card">
-        <h2>Frequência dos feedbacks <span class="badge">passo 3</span></h2>
-        <p>Frequência que vamos analisar seu progresso.</p>
-        <p class="hint">(frequência que vamos analisar seu progresso)</p>
+        <h2>Frequência dos feedbacks</h2>
+        <div class="badge">passo 4</div>
+        <p>Frequência com que vamos revisar seus resultados e ajustes.</p>
 
         <div class="options">
-          <label><input type="radio" name="frequency" value="quinzenal" checked /> Quinzenal</label>
-          <label><input type="radio" name="frequency" value="semanal" /> Semanal</label>
-          <label><input type="radio" name="frequency" value="trimestral" /> Trimestral</label>
+          <label>
+            <input type="radio" name="frequency" value="semanal" checked />
+            <span>Semanal (ideal para melhorias de hábitos, comportamento e emagrecimento)</span>
+          </label>
+          <label>
+            <input type="radio" name="frequency" value="quinzenal" />
+            <span>Quinzenal (ideal para hipertrofia)</span>
+          </label>
+          <label>
+            <input type="radio" name="frequency" value="mensal" />
+            <span>Mensal</span>
+          </label>
         </div>
       </div>
     </div>
@@ -304,9 +317,9 @@
 
     const config = {
       frequencyFactors: {
-        quinzenal: 1.0,
         semanal: 1.4,
-        trimestral: 0.7
+        quinzenal: 1.0,
+        mensal: 0.7
       },
       durationDiscounts: {
         3: 1.0,
@@ -315,7 +328,7 @@
       },
       planFactors: {
         individual: 1.0,
-        casal: 1.2 // 2 pessoas com 40% de desconto no total conjunto
+        dupla: 1.2 // 2 pessoas com 40% de desconto no total conjunto
       }
     };
 
@@ -332,7 +345,6 @@
       const frequencyRadio = document.querySelector('input[name="frequency"]:checked');
       const planRadio = document.querySelector('input[name="planType"]:checked');
 
-      // Serviços
       let selectedServices = [];
       let monthlyBase = 0;
       serviceCheckboxes.forEach(cb => {
@@ -344,7 +356,7 @@
       });
 
       const duration = durationRadio ? parseInt(durationRadio.value, 10) : 0;
-      const frequency = frequencyRadio ? frequencyRadio.value : "quinzenal";
+      const frequency = frequencyRadio ? frequencyRadio.value : "semanal";
       const planType = planRadio ? planRadio.value : "individual";
 
       const frequencyFactor = config.frequencyFactors[frequency] ?? 1.0;
@@ -354,10 +366,13 @@
       const monthlyAdjusted = monthlyBase * frequencyFactor;
       const total = monthlyAdjusted * duration * durationFactor * planFactor;
 
-      // Resumo
+      // Tipo de plano
       document.getElementById("summary-plan-type").textContent =
-        planType === "casal" ? "Casal (amigos ou parceiros(as))" : "Individual";
+        planType === "dupla"
+          ? "Dupla (amigos, parceiros(as) ou familiares)"
+          : "Individual";
 
+      // Serviços
       document.getElementById("summary-services-count").textContent = selectedServices.length;
 
       const listContainer = document.getElementById("summary-services-list");
@@ -372,14 +387,17 @@
         listContainer.textContent = "Nenhum serviço selecionado.";
       }
 
+      // Duração
       document.getElementById("summary-duration").textContent =
         duration ? `${duration} meses` : "-";
 
-      let frequencyLabel = "Quinzenal";
-      if (frequency === "semanal") frequencyLabel = "Semanal";
-      if (frequency === "trimestral") frequencyLabel = "Trimestral";
+      // Frequência label
+      let frequencyLabel = "Semanal";
+      if (frequency === "quinzenal") frequencyLabel = "Quinzenal";
+      if (frequency === "mensal") frequencyLabel = "Mensal";
       document.getElementById("summary-frequency").textContent = frequencyLabel;
 
+      // Valores
       document.getElementById("summary-monthly-base").textContent =
         formatCurrency(monthlyBase);
 
@@ -402,7 +420,6 @@
           : "";
     }
 
-    // Listeners
     document.querySelectorAll('input[name="service"]').forEach(el =>
       el.addEventListener("change", updateSummary)
     );
