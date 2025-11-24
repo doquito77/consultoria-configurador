@@ -50,23 +50,27 @@
       text-align: left;
     }
 
+    /* CABEÇALHO DO CARD: TÍTULO + PASSO */
     .card-header {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 4px;
       margin-bottom: 8px;
     }
 
-    .card-header h2 {
+    .card-title {
+      margin: 0 0 4px 0;
       font-size: 16px;
-      margin: 0;
-      width: 100%;
-      text-align: left;
+      font-weight: 600;
     }
 
-    .card-header .badge {
-      margin-left: 0;
+    .card-step {
+      display: inline-flex;           /* pílula, mas alinhada à esquerda */
+      align-items: center;
+      justify-content: flex-start;
+      padding: 2px 10px;              /* largura confortável */
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid #3a3a44;
+      color: #c4c4cc;
+      background: #1f1f25;
     }
 
     .card p {
@@ -163,18 +167,6 @@
       color: #8a8a92;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 2px 14px;      /* OPÇÃO B: mais largura lateral */
-      border-radius: 999px;
-      font-size: 10px;
-      border: 2px solid #3a3a44;
-      color: #c4c4cc;
-      background: #1f1f25;
-      text-align: left;
-      margin-left: 2px; 
-    }
-
     .services-list {
       font-size: 13px;
       color: #c8c8d2;
@@ -210,8 +202,8 @@
       <!-- Tipo de plano -->
       <div class="card">
         <div class="card-header">
-          <h2>Tipo de plano</h2>
-          <div class="badge">passo 1</div>
+          <h2 class="card-title">Tipo de plano</h2>
+          <div class="card-step">passo 1</div>
         </div>
         <p>Escolha se o plano será individual ou para duas pessoas.</p>
         <div class="options">
@@ -234,8 +226,8 @@
       <!-- Serviços -->
       <div class="card">
         <div class="card-header">
-          <h2>Serviços incluídos</h2>
-          <div class="badge">passo 2</div>
+          <h2 class="card-title">Serviços incluídos</h2>
+          <div class="card-step">passo 2</div>
         </div>
         <p>Escolha o que vai fazer parte do acompanhamento.</p>
 
@@ -251,8 +243,8 @@
       <!-- Duração -->
       <div class="card">
         <div class="card-header">
-          <h2>Duração do acompanhamento</h2>
-          <div class="badge">passo 3</div>
+          <h2 class="card-title">Duração do acompanhamento</h2>
+          <div class="card-step">passo 3</div>
         </div>
         <p>Define o tempo mínimo de contrato.</p>
 
@@ -266,8 +258,8 @@
       <!-- Frequência dos feedbacks -->
       <div class="card">
         <div class="card-header">
-          <h2>Frequência dos feedbacks</h2>
-          <div class="badge">passo 4</div>
+          <h2 class="card-title">Frequência dos feedbacks</h2>
+          <div class="card-step">passo 4</div>
         </div>
         <p>Frequência com que vamos revisar seus resultados e ajustes.</p>
 
